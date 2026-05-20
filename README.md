@@ -6,6 +6,8 @@
 
 - **[AI-Study-Plan.md](AI-Study-Plan.md)** — 9개 Part 커리큘럼 목차
 - **[AI-Study-Progress.md](AI-Study-Progress.md)** — 16주 진도표 · 체크포인트 · 주간 회고
+- **[book/](book/)** — 본문 (작성 중)
+  - [Part 1. LLM 기초](book/01-LLM-기초.md) ✅
 
 ## 🎯 목표
 
