@@ -1,5 +1,11 @@
 # MCP 이론
 
+> **출처 안내:** 이 문서는 공식 커리큘럼이 아니라, 각 기술의 공식 자료(FastAPI 공식 튜토리얼, Anthropic tool use 공식 문서, LangChain/LangGraph 공식 문서, modelcontextprotocol.io 공식 퀵스타트)를 기반으로 스터디용으로 자체 구성한 것이다.
+> - 개별 추천 자료와 기술 내용은 공식 문서 기준 (조사 시점에 URL 접속 검증)
+> - 3단계 순서, 세션 분할, 실습 과제 설계는 자체 구성
+> - fastapi-mcp, langchain-mcp-adapters는 공식 MCP 프로젝트가 아닌 서드파티 라이브러리 (단, 생태계 표준급)
+> - 공식 강좌가 필요하면: [Anthropic Academy MCP 입문](https://anthropic.skilljar.com/introduction-to-model-context-protocol), [LangChain Academy Intro to LangGraph](https://academy.langchain.com/courses/intro-to-langgraph)
+
 > REST API → LLM Tool Calling → MCP 순서로 학습한다.
 > 전체 흐름: **REST API(기능을 외부에 노출) → Tool Calling(LLM이 그 기능을 사용) → MCP(그 연결 방식을 표준화)**
 > 각 단계의 실습물이 다음 단계에서 그대로 재사용된다.

@@ -1,5 +1,7 @@
 # MCP 실습 (실습 워크북)
 
+> **출처 안내:** 이 워크북은 공식 커리큘럼이 아니라, 각 기술의 공식 자료(FastAPI 공식 튜토리얼, Anthropic tool use 공식 문서, LangChain/LangGraph 공식 문서, modelcontextprotocol.io 공식 퀵스타트)를 기반으로 스터디용으로 자체 구성한 것이다. 실습 코드는 공식 문서의 패턴을 따르되, 단계 순서·시간 배분·체크포인트·실습 간 연결 설계는 자체 구성이다. fastapi-mcp, langchain-mcp-adapters는 서드파티 라이브러리(생태계 표준급). 공식 강좌는 부록 참고.
+
 > 전체 흐름: **REST API(기능을 외부에 노출) → Tool Calling(LLM이 그 기능을 사용) → MCP(그 연결 방식을 표준화)**
 > 각 실습의 결과물이 다음 실습에서 그대로 재사용된다. 따라 하면서 직접 만들어보는 것이 목표.
 
