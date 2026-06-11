@@ -5,6 +5,22 @@
 > 전체 흐름: **REST API(기능을 외부에 노출) → Tool Calling(LLM이 그 기능을 사용) → MCP(그 연결 방식을 표준화)**
 > 각 실습의 결과물이 다음 실습에서 그대로 재사용된다. 따라 하면서 직접 만들어보는 것이 목표.
 
+## 이론 ↔ 실습 대응표
+
+이 워크북은 [MCP 이론.md](MCP%20이론.md)에 바탕을 둔 실습이다. 각 세션에서 **이론 문서의 해당 장으로 개념을 먼저 잡고 → 아래 대응하는 실습 단계를 따라 한다.**
+
+| MCP 이론.md의 개념 | MCP 실습.md에서 확인하는 곳 |
+|---|---|
+| 1장: HTTP 메서드/상태 코드, Pydantic 검증(422), OpenAPI 스키마 | 실습 1: Hello FastAPI에서 422 직접 유발, `/openapi.json` 열어보기, Todo CRUD에서 201/404/204 구현 |
+| 2장: tool schema, agentic loop(`tool_use`→실행→`tool_result`) | 실습 2-1: while 수동 루프를 직접 작성하고 `stop_reason`이 두 번 찍히는 멀티스텝 관찰 |
+| 2장: StateGraph, ToolNode, 조건부 엣지, checkpointer | 실습 2-2: 같은 에이전트를 그래프로 재구성 — "while 루프가 그래프의 cycle이 됐다" 체크포인트 |
+| 3장: Host–Client–Server, JSON-RPC, `tools/list`/`tools/call` | 실습 3-2: Inspector 화면에서 JSON-RPC 요청/응답 메시지를 직접 관찰 |
+| 3장: stdio vs Streamable HTTP 두 전송 방식 | 실습 3-1(stdio 날씨 서버)과 3-4(HTTP Todo 서버)로 둘 다 사용 |
+| 3장: N×M 문제 → N+M 표준화 | 실습 3-3: 같은 서버를 코드 수정 없이 Inspector/Claude Desktop/Claude Code에 꽂아보기 |
+| 1·3장: "REST 엔드포인트 = MCP 도구" 연결점 | 실습 3-4: fastapi-mcp 3줄로 Todo API가 MCP 서버가 되는 것 확인 |
+
+이론 문서에만 있는 내용(추천 자료 표, 학습 개념 전체 목록)은 예습·복습용, 실습 문서에만 있는 내용(전체 코드, 체크포인트)은 세션 당일용.
+
 ## 실습 0. 환경 준비
 
 ```bash
