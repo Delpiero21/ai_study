@@ -1,6 +1,6 @@
 # MCP 스터디 실습 예제 코드
 
-[MCP 실습.md](../MCP%20실습.md) 워크북의 모든 단계를 바로 실행 가능한 코드로 정리했다.
+[추천 학습법.md](../추천%20학습법.md) 2단계 커리큘럼의 모든 실습을 바로 실행 가능한 코드로 정리했다.
 폴더 순서대로 따라가면 된다.
 
 ```
@@ -45,4 +45,4 @@ pip install -r 01-fastapi/requirements.txt
 | 3-4 | `03-mcp/todo_mcp.py` | `fastapi dev todo_mcp.py` → /mcp |
 | 3-5 | `03-mcp/mcp_agent.py` | `python mcp_agent.py` |
 
-> 각 단계에서 확인할 것(✅ 체크포인트)과 도전 과제는 [MCP 실습.md](../MCP%20실습.md) 워크북에 정리되어 있다.
+> 각 단계의 확인 포인트와 세부 커리큘럼은 [추천 학습법.md](../추천%20학습법.md) 2단계에 정리되어 있다.
