@@ -1,0 +1,8 @@
+mcp[cli]
+httpx
+fastapi[standard]
+fastapi-mcp
+langchain
+langgraph
+langchain-anthropic
+langchain-mcp-adapters
