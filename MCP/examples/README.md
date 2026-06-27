@@ -41,7 +41,7 @@ pip install -r 01-fastapi/requirements.txt
 | 2-2 | `02-tool-calling/graph_agent.py` | `python graph_agent.py` |
 | 2-3 | `02-tool-calling/prebuilt_agent.py` | `python prebuilt_agent.py` |
 | 3-1 | `03-mcp/weather.py` | `python weather.py` (또는 Inspector로 실행) |
-| 3-2 | `03-mcp/weather.py` | `npx @modelcontextprotocol/inspector python weather.py` |
+| 3-2 | `03-mcp/weather.py` | `mcp dev weather.py` (간편) 또는 `npx @modelcontextprotocol/inspector python weather.py` |
 | 3-4 | `03-mcp/todo_mcp.py` | `fastapi dev todo_mcp.py` → /mcp |
 | 3-5 | `03-mcp/mcp_agent.py` | `python mcp_agent.py` |
 

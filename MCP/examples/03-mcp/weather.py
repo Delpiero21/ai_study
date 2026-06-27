@@ -8,8 +8,12 @@
     python weather.py
 
 실행 방법 2 — Inspector로 테스트 (실습 3-2):
-    npx @modelcontextprotocol/inspector python weather.py
-    → 브라우저(localhost:6274) Tools 탭에서 get_forecast 호출, JSON-RPC 메시지 관찰
+    방법 2a (Python SDK 내장, 간편 — DeepLearning.AI 강의 방식):
+        mcp dev weather.py
+    방법 2b (Inspector 직접 실행):
+        npx @modelcontextprotocol/inspector python weather.py
+    → 둘 다 같은 Inspector(localhost:6274). 브라우저에서 Connect → Tools 탭 →
+      List Tools → get_forecast 호출, JSON-RPC 메시지 관찰. 호출 사이 서버 상태 유지됨
 
 Claude 연결 (실습 3-3):
     Claude Code:   claude mcp add weather -- python <절대경로>/weather.py
