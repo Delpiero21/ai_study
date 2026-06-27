@@ -13,10 +13,15 @@ MCP(Model Context Protocol)를 직접 서버로 만들고 클라이언트에 연
 
 공식 강의(영어)로 전체 그림을 잡고 → 직접 코드를 돌려보며 익히고 → 막히는 부분만 한국어 자료로 보충한다. MCP만 깊게 다루는 한국어 영상 강의는 사실상 없어, 공식 강의를 기준으로 잡았다.
 
-### [1단계] 공식 강의 — DeepLearning.AI "MCP: Build Rich-Context AI Apps" (무료, 약 1.5시간)
+### [1단계] 공식 강의 (Anthropic 공식, 무료) — 입문 → 정석 2단
 
-MCP를 만든 Anthropic이 직접 참여한 12강 강의.
+MCP를 만든 Anthropic이 직접 만든 강의로, 가벼운 입문으로 워밍업한 뒤 정석 풀코스로 마무리한다.
 
+**① 먼저 — Anthropic Academy: Introduction to MCP (입문)**
+- 짧고 가벼움, 3대 프리미티브(Tools·Resources·Prompts) 중심, 자막 활용 가능
+- 부담 없이 전체 그림 잡기
+
+**② 그다음 — DeepLearning.AI "MCP: Build Rich-Context AI Apps" (정석, 12강 약 1.5시간, 영어)**
 - Why MCP / MCP Architecture (Host–Client–Server, JSON-RPC, 전송 방식)
 - Creating an MCP Server / Client
 - Connecting to Reference Servers

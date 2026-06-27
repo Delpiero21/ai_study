@@ -15,14 +15,30 @@
 
 ---
 
-# 1단계 — 정석 강의 (영어, 무료)
+# 1단계 — 공식 강의 (Anthropic 공식, 무료)
 
-MCP를 **만든 회사(Anthropic)가 직접** 참여한 자료라 가장 정확하고 최신이다. 군더더기 없이 MCP만 정면으로 다룬다.
+MCP를 **만든 회사(Anthropic)가 직접** 만든 강의로 개념을 잡는다. **입문(가벼움)으로 워밍업 → 정석(풀코스)으로 마무리** 2단으로 본다.
 
-## ⭐ 메인: [MCP: Build Rich-Context AI Apps](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/) (DeepLearning.AI × Anthropic)
+## ① 먼저 — [Anthropic Academy: Introduction to MCP](https://anthropic.skilljar.com/introduction-to-model-context-protocol) (입문, 무료)
 
-- 강사: Elie Schoppik (Anthropic 기술교육 총괄)
-- 총 12강 / 약 83분 / 무료
+- 만든 곳: Anthropic 직접 / 약 14레슨, 짧음
+- 선수지식: Python 기본, JSON·HTTP 요청/응답 기본
+- 가볍게 핵심만. 부담 없이 전체 그림 + 3대 프리미티브를 잡기 좋다. (플레이어 자동 번역 자막 활용 가능)
+
+### 세부 목차
+
+| 섹션 | 레슨 | 다루는 것 |
+|---|---|---|
+| 1. Introduction | Welcome / Introducing MCP / MCP clients | MCP가 무엇이고 왜 필요한가, 어떤 클라이언트가 쓰나 |
+| 2. Hands-on with Servers | Project setup / Defining tools / Server inspector | `@mcp.tool()`로 도구 정의 → Inspector로 테스트 |
+| 3. Connecting Clients | Implementing a client / Defining·Accessing resources / Defining prompts·Prompts in client | 클라이언트 구현 + Resources·Prompts 프리미티브 |
+| 4. Wrap Up | Final assessment / MCP review | 평가 + 정리 |
+
+## ② 그다음 — [MCP: Build Rich-Context AI Apps](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/) (정석, 무료)
+
+- 만든 곳: DeepLearning.AI × Anthropic (강사: Elie Schoppik, Anthropic 기술교육 총괄)
+- 총 12강 / 약 83분 / **전부 영어**
+- 입문에서 다룬 것에 더해 **레퍼런스 서버 연결·원격 배포·Claude Desktop 등록**까지 — MCP를 처음부터 끝까지 한 바퀴 돈다.
 
 ### 세부 목차 (강의 순서대로)
 
@@ -47,10 +63,9 @@ MCP를 **만든 회사(Anthropic)가 직접** 참여한 자료라 가장 정확�
 
 | 강의 | 만든 곳 | 특징 |
 |---|---|---|
-| [Anthropic Academy: MCP 입문](https://anthropic.skilljar.com/introduction-to-model-context-protocol) | Anthropic 직접 | MCP 만든 회사의 공식 입문 |
 | [Hugging Face MCP Course](https://huggingface.co/learn/mcp-course/en/unit0/introduction) | Hugging Face | 이론 + Gradio end-to-end, 수료증 |
 
-> **"정석"의 의미 구분:** DeepLearning.AI는 *내용의 정확성·권위* 기준 정석이다. 다만 **전부 영어**다. 영어 자막으로 따라갈 수 있으면 1순위가 맞고, 영어가 부담되면 한국어로는 3단계(테디노트) + 2단계(워크북)가 현실적인 정석이다.
+> **순서 정리:** ① Academy 입문으로 워밍업(가볍고 자막 활용 가능) → ② DeepLearning.AI 정석으로 배포·운영까지 마무리. **"정석"은 DeepLearning.AI지만, 입문은 Academy로 먼저** 보는 게 영어 강의 부담도 줄이고 효율적이다.
 
 ---
 

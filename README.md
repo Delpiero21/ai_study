@@ -42,7 +42,7 @@ MCP를 배우는 데 필요한 모든 것(선수지식 + 본체)을 3단계로 �
 
 | 단계 | 무엇 | 형식 |
 |---|---|---|
-| **1단계** | [DeepLearning.AI MCP 정석 강의](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/) (영어 자막, 12강 1.5h) | 영상 (정석) |
+| **1단계** | [Anthropic Academy MCP 입문](https://anthropic.skilljar.com/introduction-to-model-context-protocol)(워밍업) → [DeepLearning.AI MCP 정석 강의](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/)(12강 1.5h) | 영상 (공식) |
 | **2단계** | 이 저장소 [examples/](MCP/examples/) 직접 실행 (REST API → Tool Calling → MCP) | 실습 |
 | **3단계** | [테디노트 MCP 가이드](https://wikidocs.net/book/17801) 등 한국어 자료로 보충 | 텍스트/영상 |
 
