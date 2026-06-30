@@ -1,6 +1,8 @@
 # 외부 출처 학습 자료 — 공개 레포에 업로드하지 않음
 *.pdf
 *.txt
+# 단, 직접 만든 강의노트 PDF는 올린다
+!MCP-강의노트.pdf
 # 단, 예제 의존성 파일은 올린다
 !requirements.txt
 !**/requirements.txt
