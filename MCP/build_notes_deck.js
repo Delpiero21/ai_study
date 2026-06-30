@@ -132,4 +132,4 @@ s.addText("tool calling 루프는 그대로, 도구의 정의·실행만 별도 
 s.addText("다음 강의: DeepLearning.AI — MCP: Build Rich-Context AI Apps (원격 배포까지)",
   { x: 0.9, y: 6.3, w: 11.3, h: 0.5, fontFace: F, fontSize: 14, italic: true, color: "94A3B8", margin: 0 });
 
-pres.writeFile({ fileName: "MCP-강의노트.pptx" }).then((f) => console.log("created:", f));
+pres.writeFile({ fileName: "MCP/MCP-강의노트.pptx" }).then((f) => console.log("created:", f));

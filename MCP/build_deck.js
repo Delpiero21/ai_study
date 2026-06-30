@@ -262,4 +262,4 @@ s.addText([
   { text: "Inspector로 검증 → Claude 연결", options: { bullet: true } },
 ], { x: 8.95, y: 3.05, w: 3.5, h: 3.3, fontFace: F, fontSize: 14, color: "E2E8F0", paraSpaceAfter: 13, margin: 0 });
 
-pres.writeFile({ fileName: "MCP-스터디-진행현황.pptx" }).then((f) => console.log("created:", f));
+pres.writeFile({ fileName: "MCP/MCP-스터디-진행현황.pptx" }).then((f) => console.log("created:", f));
