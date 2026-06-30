@@ -32,3 +32,6 @@ yarn-error.log
 
 # 중복 압축본 제외
 *.zip
+
+# Office 임시 잠금 파일
+~$*
