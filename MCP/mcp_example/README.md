@@ -7,15 +7,38 @@ MCP 서버의 3대 프리미티브(Tools · Resources · Prompts)를 Inspector�
 
 ## 준비물
 - Python 3.10+
+- uv (아래 0번에서 설치)
 - Node.js (Inspector 실행용)
 - (API 키 불필요)
+
+## 0. 처음이라면 — 설치부터 (한 번만)
+
+### uv 설치 (Windows PowerShell)
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+설치 후 **터미널을 닫았다 새로 열고** 확인:
+```powershell
+uv --version
+```
+
+### Node.js 확인 (Inspector용)
+```powershell
+node --version
+```
+버전이 안 나오면 https://nodejs.org 에서 LTS 설치 후 터미널 다시 열기.
+
+> uv 설치가 막히면(회사 정책 등) 아래 "방법 B — 일반 venv"로 진행.
 
 ## 실행 방법
 
 ### 방법 A — uv (권장, 가장 간단)
 ```bash
+cd MCP/mcp_example
 uv run --with "mcp[cli]" mcp dev server.py
 ```
+> `--with "mcp[cli]"` 가 필요한 패키지를 자동 설치하고 실행한다 (별도 install 불필요).
+> 처음 실행 시 "Installed N packages" 가 뜨면 정상.
 
 ### 방법 B — 일반 venv
 ```bash
