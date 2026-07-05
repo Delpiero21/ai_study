@@ -4,6 +4,7 @@
 # 단, 직접 만든 강의노트 PDF는 올린다
 !MCP-강의노트.pdf
 !MCP-공식소개.pdf
+!MCP-핵심정리.pdf
 # 단, 예제 의존성 파일은 올린다
 !requirements.txt
 !**/requirements.txt
