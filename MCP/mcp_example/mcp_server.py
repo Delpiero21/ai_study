@@ -4,7 +4,7 @@ MCP 서버의 3대 프리미티브(Tools · Resources · Prompts)를 한 파일�
 Claude 없이 Inspector로만 직접 눌러보며 테스트한다 (내가 '뇌' 역할).
 
 실행:
-    uv run mcp dev server.py        (또는:  mcp dev server.py)
+    uv run mcp dev mcp_server.py    (또는:  mcp dev mcp_server.py)
     → 브라우저 http://127.0.0.1:6274 → Connect
     → 상단 탭 Tools / Resources / Prompts 를 각각 눌러 확인
 

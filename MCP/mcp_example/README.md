@@ -35,7 +35,7 @@ node --version
 ### 방법 A — uv (권장, 가장 간단)
 ```bash
 cd MCP/mcp_example
-uv run --with "mcp[cli]" mcp dev server.py
+uv run --with "mcp[cli]" mcp dev mcp_server.py
 ```
 > `--with "mcp[cli]"` 가 필요한 패키지를 자동 설치하고 실행한다 (별도 install 불필요).
 > 처음 실행 시 "Installed N packages" 가 뜨면 정상.
@@ -45,7 +45,7 @@ uv run --with "mcp[cli]" mcp dev server.py
 python -m venv .venv
 .venv\Scripts\activate        # Windows (Git Bash: source .venv/Scripts/activate)
 pip install -r requirements.txt
-mcp dev server.py
+mcp dev mcp_server.py
 ```
 
 → 터미널에 `http://127.0.0.1:6274` 주소가 뜨면 브라우저로 열기.

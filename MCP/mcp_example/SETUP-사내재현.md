@@ -1,6 +1,6 @@
 # 사내 PC에서 처음부터 재현하기 (Ollama 로컬 LLM + MCP)
 
-> 목표: **API 키 없이**, 로컬 모델(Ollama)이 내 MCP 서버(`server.py`)의 도구를 자동 호출하게 만들기.
+> 목표: **API 키 없이**, 로컬 모델(Ollama)이 내 MCP 서버(`mcp_server.py`)의 도구를 자동 호출하게 만들기.
 > 사내 PC는 집 PC와 **다른 기계**이므로, 아래를 처음부터 그대로 따라 한다.
 > ⚠️ 인터넷이 필요한 단계(★)는 **인터넷 되는 곳에서 미리** 끝내둘 것.
 
@@ -63,8 +63,8 @@ ollama serve
 ## 6. 실행
 ```bash
 # venv 사용 (활성화했다면 python 그대로)
-.venv\Scripts\python ollama_chat.py
-# 또는 활성화 상태면:  python ollama_chat.py
+.venv\Scripts\python mcp_host.py
+# 또는 활성화 상태면:  python mcp_host.py
 ```
 
 ### 기대 출력
@@ -85,7 +85,7 @@ ollama serve
 | `model 'qwen2.5' not found` | 모델 없음 → `ollama pull qwen2.5` 또는 3번 복사 |
 | `No module named mcp` / `langchain...` | venv에 설치 안 됨 → 4번 다시, 실행도 venv 파이썬으로 |
 | 모델이 도구를 안 부르고 그냥 대답함 | 로컬 모델 한계 → 질문을 "반드시 도구를 사용해서"로 강조 / `MODEL`을 `llama3.1`로 변경 |
-| `server.py` 관련 에러 | 실행 위치가 `mcp_example` 폴더인지 확인 (server.py 가 같은 폴더에 있어야 함) |
+| `mcp_server.py` 관련 에러 | 실행 위치가 `mcp_example` 폴더인지 확인 (mcp_server.py 가 같은 폴더에 있어야 함) |
 | `LangGraphDeprecated... create_react_agent` 경고 | **에러 아님, 무시 OK.** 정상 동작함 (집 PC에서 qwen2.5로 검증 완료) |
 
 > ✅ 검증 완료: 집 PC에서 qwen2.5 + 이 서버로 실행 → 모델이 `get_weather("서울")` 를 자동 호출 →
@@ -97,6 +97,6 @@ ollama serve
 - [ ] qwen2.5 모델 (pull 또는 폴더 복사)
 - [ ] venv + 의존성 설치
 - [ ] `ollama serve` 실행 중
-- [ ] `python ollama_chat.py`
+- [ ] `python mcp_host.py`
 
 이 6개가 되면 사내에서도 키 없이 로컬로 돌아간다.

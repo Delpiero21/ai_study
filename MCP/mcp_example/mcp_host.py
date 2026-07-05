@@ -1,9 +1,14 @@
-"""대화형 버전 — 내가 직접 질문을 입력하고, 로컬 모델(Ollama)이 내 MCP 서버 도구를 써서 답한다.
+"""MCP Host — 내가 직접 질문을 입력하면, 로컬 모델(Ollama)이 MCP Server의 도구를 써서 답한다.
 
-API 키 불필요. server.py 는 수정하지 않는다.
+[MCP 개념 매핑]
+  · MCP Host   = 이 파일. 사용자·LLM·클라이언트를 한데 묶어 굴리는 '앱' 본체.
+  · MCP Client = 아래 MultiServerMCPClient 객체. Host가 만들어 Server와 1:1 통신하는 커넥터.
+  · MCP Server = mcp_server.py. 도구·리소스·프롬프트를 제공. (이 파일은 Server를 수정하지 않음)
+
+API 키 불필요.
 
 실행 (venv 활성화 or venv 파이썬으로):
-    .venv\\Scripts\\python ollama_chat.py
+    .venv\\Scripts\\python mcp_host.py
 
 종료:  quit  또는  Enter만 입력
 
@@ -37,11 +42,12 @@ SYSTEM_PROMPT = """당신은 한국어로만 답하는 도우미입니다. 다�
 
 
 async def main():
+    # ── MCP Client ──  Host가 만들어 MCP Server(mcp_server.py)와 1:1로 통신하는 커넥터
     client = MultiServerMCPClient(
         {
             "example": {
                 "command": sys.executable,
-                "args": ["server.py"],
+                "args": ["mcp_server.py"],
                 "transport": "stdio",
             }
         }
