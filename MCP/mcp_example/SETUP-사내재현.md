@@ -63,8 +63,8 @@ ollama serve
 ## 6. 실행
 ```bash
 # venv 사용 (활성화했다면 python 그대로)
-.venv\Scripts\python ollama_client.py
-# 또는 활성화 상태면:  python ollama_client.py
+.venv\Scripts\python ollama_chat.py
+# 또는 활성화 상태면:  python ollama_chat.py
 ```
 
 ### 기대 출력
@@ -97,6 +97,6 @@ ollama serve
 - [ ] qwen2.5 모델 (pull 또는 폴더 복사)
 - [ ] venv + 의존성 설치
 - [ ] `ollama serve` 실행 중
-- [ ] `python ollama_client.py`
+- [ ] `python ollama_chat.py`
 
 이 6개가 되면 사내에서도 키 없이 로컬로 돌아간다.
