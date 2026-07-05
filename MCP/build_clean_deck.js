@@ -97,6 +97,13 @@ tbl(s, [
 ], 0.9, 2.2, 11.5, [2.6, 8.9], [0.95, 0.95, 0.95]);
 s.addText("관계:  Host ⊃ Client  →(통신)→  Server", { x: 0.9, y: 5.5, w: 11.7, h: 0.5, fontFace: F, fontSize: 17, bold: true, color: ACCENT, margin: 0 });
 
+// ===== 8b. Architecture diagram (official) =====
+s = p.addSlide(); s.background = { color: WHITE };
+header(s, "PART 2 · 아키텍처", "MCP 아키텍처 — 공식 다이어그램");
+s.addImage({ path: "MCP/mcp-architecture.png", x: 2.42, y: 1.95, w: 8.5, h: 4.79 });
+s.addText("Host(Claude 등) 안의 Client가, USB-C 허브처럼 여러 MCP Server(Slack·Gmail·로컬 등)에 표준 하나로 연결된다.",
+  { x: 0.7, y: 6.85, w: 12, h: 0.5, fontFace: F, fontSize: 14, italic: true, color: MUTE, align: "center", margin: 0 });
+
 // ===== 9. Host =====
 s = p.addSlide(); s.background = { color: WHITE };
 header(s, "① MCP HOST", "MCP Host — 지휘관");
