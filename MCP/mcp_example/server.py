@@ -75,5 +75,56 @@ def weather_report(
     ]
 
 
+# ═════════════════════════════════════════════
+#  추가 연습 — 새로운 패턴들 (Inspector에서 Restart 후 확인)
+# ═════════════════════════════════════════════
+
+# (연습 1) 선택지 파라미터 + 계산 — 섭씨를 화씨/켈빈으로 변환
+#          → 인자에 "정해진 값 중 하나"를 받는 패턴 + 검증
+@mcp.tool(name="convert_temp", description="섭씨를 화씨(fahrenheit) 또는 켈빈(kelvin)으로 변환한다.")
+def convert_temp(
+    celsius: float = Field(description="섭씨 온도"),
+    to: str = Field(description="변환 단위: 'fahrenheit' 또는 'kelvin'"),
+) -> str:
+    if to == "fahrenheit":
+        return f"{celsius}°C = {celsius * 9 / 5 + 32}°F"
+    if to == "kelvin":
+        return f"{celsius}°C = {celsius + 273.15}K"
+    raise ValueError("to 는 'fahrenheit' 또는 'kelvin' 이어야 합니다")
+
+
+# (연습 2) ★상태를 바꾸는 도구★ — 도시를 추가/수정한다.
+#          Inspector는 호출 사이 상태를 유지하므로:
+#          add_city("대구","폭염 35도") 실행 → 그 다음 get_weather("대구") 나 list_cities 로 확인!
+@mcp.tool(name="add_city", description="새 도시의 날씨를 추가하거나 기존 도시를 수정한다.")
+def add_city(
+    city: str = Field(description="도시 이름"),
+    weather: str = Field(description="날씨 설명 (예: '폭염, 35도')"),
+) -> str:
+    existed = city in FAKE_WEATHER
+    FAKE_WEATHER[city] = weather
+    return f"{city} {'수정됨' if existed else '추가됨'}: {weather} (현재 도시 {len(FAKE_WEATHER)}개)"
+
+
+# (연습 3) 계산 결과를 돌려주는 리소스 — 등록된 도시 개수/목록
+#          → 리소스는 저장된 값뿐 아니라 '계산한 값'도 돌려줄 수 있다
+@mcp.resource("weather://count", mime_type="application/json")
+def city_count() -> dict:
+    return {"city_count": len(FAKE_WEATHER), "cities": list(FAKE_WEATHER.keys())}
+
+
+# (연습 4) 인자 2개를 받는 프롬프트 — 두 도시 비교
+@mcp.prompt(name="compare_weather", description="두 도시의 날씨를 비교하는 프롬프트.")
+def compare_weather(
+    city_a: str = Field(description="첫 번째 도시"),
+    city_b: str = Field(description="두 번째 도시"),
+) -> list[base.Message]:
+    return [
+        base.UserMessage(
+            f"{city_a}와 {city_b}의 날씨를 조회해서, 어느 쪽이 더 나들이하기 좋은지 한 문장으로 비교해줘."
+        )
+    ]
+
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")
