@@ -5,6 +5,18 @@ MCP 서버의 3대 프리미티브(Tools · Resources · Prompts)를 Inspector�
 
 > 원리: LLM이 도구를 호출하는 대신, **내가 웹 UI에서 버튼을 눌러** 도구를 실행한다. (내가 '뇌' 역할)
 
+## 구조 한눈에
+
+![mcp_example 구조](architecture.svg)
+
+| MCP 개념 | 파일 / 위치 | 역할 |
+|---|---|---|
+| **MCP Host** | `mcp_host.py` | 사용자 · LLM · 클라이언트를 묶어 굴리는 앱 본체 |
+| **MCP Client** | `mcp_host.py` 안의 `MultiServerMCPClient` | Host가 만들어 Server와 1:1 통신하는 커넥터 (별도 파일 아님) |
+| **MCP Server** | `mcp_server.py` | 도구(Tools) · 리소스(Resources) · 프롬프트(Prompts) 제공 |
+
+> 흐름: 질문 → LLM이 도구 선택 → Client가 Server 호출(`tools/call`) → 결과 → LLM이 최종 답변
+
 ## 준비물
 - Python 3.10+
 - uv (아래 0번에서 설치)
