@@ -31,6 +31,21 @@ def main():
     r = httpx.get(f"{BASE}/todos/999")
     print("GET /todos/999:", r.status_code, r.json())
 
+    # 5) HTTP 헤더 + 인증 예제 --------------------------------
+    #    요청에 헤더를 직접 붙여서 보낸다.
+    headers = {
+        "Content-Type": "application/json",         # 본문 형식
+        "Authorization": "Bearer my-test-token",    # 인증 헤더 (Bearer 토큰 방식)
+        "Accept": "application/json",               # 받고 싶은 형식
+    }
+    r = httpx.post(f"{BASE}/todos", json={"title": "헤더 테스트"}, headers=headers)
+
+    print("\n--- HTTP 헤더/인증 예제 ---")
+    print("상태코드:", r.status_code)               # 상태 코드 (201 등)
+    print("보낸 요청 헤더:", dict(r.request.headers))  # 우리가 보낸 헤더 (Authorization 포함)
+    print("받은 응답 헤더:", dict(r.headers))          # 서버가 보낸 헤더 (Content-Type 등)
+    print("본문:", r.json())
+
 
 if __name__ == "__main__":
     main()
