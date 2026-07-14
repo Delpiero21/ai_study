@@ -1,4 +1,4 @@
-anthropic
+ollama
 langchain
 langgraph
-langchain-anthropic
+langchain-ollama
