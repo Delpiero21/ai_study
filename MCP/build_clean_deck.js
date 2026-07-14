@@ -144,6 +144,23 @@ tbl(s, [
 s.addText("참고: 예전의 'HTTP+SSE 단독' 방식은 구버전(deprecated)으로, 지금은 Streamable HTTP로 통합됨. WebSocket은 공식 표준 전송 방식이 아니다.",
   { x: 0.9, y: 5.5, w: 11.7, h: 0.8, fontFace: F, fontSize: 14, italic: true, color: MUTE, margin: 0, lineSpacingMultiple: 1.1 });
 
+// ===== 12b. REST API vs MCP =====
+s = p.addSlide(); s.background = { color: WHITE };
+header(s, "짚고 넘어가기", "REST API와 MCP — 같은 점 / 다른 점");
+s.addText("MCP 원격 통신은 HTTP 위에서 동작한다. 하지만 REST API는 아니다 — 메시지 규약은 JSON-RPC.",
+  { x: 0.9, y: 1.95, w: 11.7, h: 0.5, fontFace: F, fontSize: 15, color: BODY, margin: 0 });
+tbl(s, [
+  [{ text: "", options: { fill: { color: HEADBG } } },
+   { text: "REST API", options: { bold: true, color: INK, fill: { color: HEADBG }, align: "center" } },
+   { text: "MCP", options: { bold: true, color: INK, fill: { color: HEADBG }, align: "center" } }],
+  [{ text: "운반 (전송)", options: { bold: true, color: INK, fill: { color: HEADBG } } }, { text: "HTTP", options: {} }, { text: "HTTP(원격) · stdio(로컬)", options: {} }],
+  [{ text: "메시지 방식", options: { bold: true, color: INK, fill: { color: HEADBG } } }, { text: "URL + GET/POST/PUT/DELETE", options: {} }, { text: "단일 엔드포인트 + JSON-RPC method", options: {} }],
+  [{ text: "예시", options: { bold: true, color: INK, fill: { color: HEADBG } } }, { text: "GET /todos/5", options: {} }, { text: "{ \"method\": \"tools/call\" }", options: {} }],
+  [{ text: "인증", options: { bold: true, color: INK, fill: { color: HEADBG } } }, { text: "Bearer · OAuth2", options: {} }, { text: "Bearer · OAuth2 (동일)", options: {} }],
+], 0.9, 2.55, 11.5, [2.3, 4.4, 4.8], [0.55, 0.7, 0.85, 0.7, 0.7]);
+s.addText("→ HTTP 토대(전송·인증)는 공유하되, 메시지 규약은 REST가 아니라 JSON-RPC.  (비유: 도로=HTTP · REST=택시 · MCP=버스)",
+  { x: 0.9, y: 6.45, w: 11.7, h: 0.5, fontFace: F, fontSize: 15, bold: true, color: ACCENT, margin: 0 });
+
 // ===== 13. Part3 =====
 s = p.addSlide(); s.background = { color: SOFTBG };
 header(s, "PART 3 · 활용과 한계", "MCP로 할 수 있는 일 vs 없는 일");
@@ -212,4 +229,4 @@ bullets(s, [
   "만능은 아님 — 요청/응답에 맞는 영역에서 강력하며, 키·권한 등 보안이 필수.",
 ], 2.0, { gap: 12, fontSize: 16 });
 
-p.writeFile({ fileName: "MCP/MCP-핵심정리.pptx" }).then((f) => console.log("created:", f));
+p.writeFile({ fileName: "MCP/mcp_스터디.pptx" }).then((f) => console.log("created:", f));
